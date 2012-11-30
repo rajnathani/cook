@@ -6,8 +6,7 @@ var popID = ?;
 var backID = ?;
 
 /**Optional (for animations (on popup cancel)**/ 
-
-var animation_out_length = ?;
+var animation_out_length = ? //duration in milliseconds;
 var back_animation_out_class_name = ?;
 var popup_animation_out_class_name = ?;
 
@@ -146,6 +145,7 @@ function pop_up(content, extra_class ){
     cancel.innerHTML = 'x';
 
     cancel.onclick = function(){
+		
     	pop_out();
     };
 	
@@ -178,13 +178,14 @@ function pop_out(){
 	animate_out(animation_out_length, backID,{backID: back_animation_out_class_name, popID: popup_animation_out_class_name });
 }
 
+
 function animate_out(delay_length, main, todo){
 	var delay = 0;
 	
 	if (animationPossible){
 		delay = delay_length - 30;
 	}
-	setTimeout(function(){$(main).remove()}, delay);
+	setTimeout(function(){$('#' + main).remove(); }, delay);
 	$.each(todo, function(key, value) { 
   		$(key).addClass(value);
 	});
