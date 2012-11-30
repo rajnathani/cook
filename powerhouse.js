@@ -1,5 +1,20 @@
 "use strict"
 
+/*Config Variables*/
+
+var popID = ?;
+var backID = ?;
+
+/**Optional (for animations (on popup cancel)**/ 
+
+var animation_out_length = ?;
+var back_animation_out_class_name = ?;
+var popup_animation_out_class_name = ?;
+
+/**/
+
+
+
 function get(to_get){
 	if (!to_get){ return false;}
 	//Check if its an ID
@@ -90,7 +105,7 @@ function animationPossible(){
 	var animation = false;
     var animationstring = 'animation';
     var keyframeprefix = '';
-    var domPrefixes = 'Webkit'.split(' ');
+    var domPrefixes = 'Webkit O MS MOZ'.split(' ');
     pfx  = '';
  
 	if( elm.style.animationName ) { animation = true; }    
@@ -110,7 +125,7 @@ function animationPossible(){
 	return animation;
 }
 
-function pop_up(popID, backID, content, extra_class ){
+function pop_up(content, extra_class ){
     if (get("#" + backID)) {return 0;}
       
     var backy = create_element('div');
@@ -160,7 +175,7 @@ function pop_up(popID, backID, content, extra_class ){
 
 function pop_out(){
 	document.onkeydown = function(){}
-	animate_out(200, 'div#backy',{'div#backy': 'out-backy', 'div#popup': 'out-pop' });
+	animate_out(animation_out_length, backID,{backID: back_animation_out_class_name, popID: popup_animation_out_class_name });
 }
 
 function animate_out(delay_length, main, todo){
