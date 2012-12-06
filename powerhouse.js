@@ -1,17 +1,19 @@
 "use strict"
 
+/*
 /*Config Variables*/
 
 var popID = ?;
 var backID = ?;
 
-/**Optional (for animations (on popup cancel)**/ 
-var animation_out_length = ? //duration in milliseconds;
+/*Optional (for animations (on popup cancel)*/ 
+var animation_out_length = ?; //duration in milliseconds;
 var back_animation_out_class_name = ?;
 var popup_animation_out_class_name = ?;
 
-/**/
-
+/*for ajax*/
+var $SCRIPT_ROOT = ?;
+*/
 
 
 function get(to_get){
