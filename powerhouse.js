@@ -37,23 +37,6 @@ function add_text(node, text){
 }
 
 
-function add_class(node, class_name){
-	node.className += (" " + class_name);
-}
-
-function remove_class(node, class_name){
-	node.className = node.className.replace(class_name, '');
-	node.className = node.className.replace((' ' + class_name), '');
-	node.className = node.className.replace((class_name + ' '), '');
-	
-}
-
-function has_class(node, class_name){
-	if (node.className.indexOf(class_name) != - 1){
-		return true;
-	} return false;
-}
-
 function get_doc_height() {
     return Math.max(
         Math.max(document.body.scrollHeight, document.documentElement.scrollHeight),
