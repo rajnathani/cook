@@ -25,9 +25,20 @@ function get(to_get){
 }
 
 
-function create_element(tag, text){
+function create_element(tag, element_build_dict){
 	var created_node = document.createElement(tag);
-	if (is_there(text)) { created_node.appendChild(document.createTextNode(text));}
+	
+    if (element_build_dict != undefined){
+	$.each( element_build_dict, function( key, value ) {
+		if (key === "Structure") { created_node.appendChild(value);}
+		else if (key === "ID") { created_node.id = value;}
+		else if (key === "Classes") {
+			for(var i=0; i < value.length; i++){
+			$(created_node).addClass(value[i]);
+			}	
+		}
+    });
+    }
 	return created_node;
 }
 
