@@ -32,11 +32,12 @@ function create_element(tag, element_build_dict){
 	$.each( element_build_dict, function( key, value ) {
 		if (key === "Structure") { created_node.appendChild(value);}
 		else if (key === "ID") { created_node.id = value;}
+		else if (key === "Class") { $(created_node).addClass(value);}
 		else if (key === "Classes") {
 			for(var i=0; i < value.length; i++){
 			$(created_node).addClass(value[i]);
-			}	
-		}
+			}
+		} else if (key === "Text") { add_text(created_node,value);}
     });
     }
 	return created_node;
