@@ -38,6 +38,9 @@ function create_element(tag, element_build_dict){
 			$(created_node).addClass(value[i]);
 			}
 		} else if (key === "Text") { add_text(created_node,value);}
+		else{
+			$(this).attr(key, value);
+		}
     });
     }
 	return created_node;
