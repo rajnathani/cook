@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1961b062-0df1-4b8b-89e1-893e9b39f778" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/example/animations.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/example/pop_up_example.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/example/powerhouse_configured.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/readme.txt" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/powerhouse.js" afterPath="$PROJECT_DIR$/powerhouse.js" />
     </list>
     <ignored path="powerhouse.iws" />
@@ -27,7 +25,7 @@
       <file leaf-file-name="powerhouse.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/powerhouse.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="28" column="13" selection-start="787" selection-end="787" vertical-scroll-proportion="0.74486095">
+            <state line="70" column="0" selection-start="1856" selection-end="1856" vertical-scroll-proportion="0.71825874">
               <folding />
             </state>
           </provider>
@@ -236,7 +234,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/powerhouse.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="13" selection-start="787" selection-end="787" vertical-scroll-proportion="0.74486095">
+        <state line="70" column="0" selection-start="1856" selection-end="1856" vertical-scroll-proportion="0.71825874">
           <folding />
         </state>
       </provider>

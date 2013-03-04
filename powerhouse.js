@@ -69,9 +69,6 @@ function get_scrolled(){
     return Math.max(window.scrollY, document.body.scrollTop);
 }
 
-function get_key_code(e){
-	return e.keyCode;
-}
 
 function is_there(val){
 	return !(val === "" || val === undefined || val === null);
