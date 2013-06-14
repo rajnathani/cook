@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1961b062-0df1-4b8b-89e1-893e9b39f778" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/power.js" afterPath="$PROJECT_DIR$/power.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cook.js" afterPath="$PROJECT_DIR$/cook.js" />
     </list>
     <ignored path="powerhouse.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -22,10 +21,28 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="power.js" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/power.js">
+      <file leaf-file-name="cook.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/cook.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="65" column="60" selection-start="2303" selection-end="2303" vertical-scroll-proportion="0.5093897">
+            <state line="103" column="19" selection-start="3402" selection-end="3402" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="homepage.html" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/webpage/homepage.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="17" column="63" selection-start="477" selection-end="477" vertical-scroll-proportion="0.45554203">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="looks.css" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/webpage/looks.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="17" column="30" selection-start="240" selection-end="240" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -49,6 +66,9 @@
         <option value="$PROJECT_DIR$/example/pop_up_example.html" />
         <option value="$PROJECT_DIR$/powerhouse.js" />
         <option value="$PROJECT_DIR$/power.js" />
+        <option value="$PROJECT_DIR$/cook.js" />
+        <option value="$PROJECT_DIR$/webpage/looks.css" />
+        <option value="$PROJECT_DIR$/webpage/homepage.html" />
       </list>
     </option>
   </component>
@@ -56,7 +76,7 @@
     <option name="width" value="1440" />
     <option name="height" value="900" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
     <OptionsSetting value="true" id="Remove" />
     <OptionsSetting value="true" id="Checkout" />
@@ -96,7 +116,21 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="power.js" />
+              <option name="myItemId" value="cook" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="powerhouse" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cook" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webpage" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -108,11 +142,11 @@
   <component name="PropertiesComponent">
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="options.lastSelected" value="preferences.keymap" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../torbok/torbokskin" />
+    <property name="options.lastSelected" value="project.propVCSSupport.Mappings" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../blog/skin" />
     <property name="FullScreen" value="false" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
   </component>
   <component name="RunManager">
     <configuration default="true" type="JavascriptDebugSession" factoryName="Local">
@@ -156,12 +190,12 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14930555" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.14930555" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="DatabaseBrowser" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -230,23 +264,23 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/power.js">
+    <entry file="file://$PROJECT_DIR$/cook.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="65" column="82" selection-start="2303" selection-end="2303" vertical-scroll-proportion="0.0">
+        <state line="103" column="19" selection-start="3402" selection-end="3402" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/power.js">
+    <entry file="file://$PROJECT_DIR$/webpage/looks.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="45" column="28" selection-start="1572" selection-end="1572" vertical-scroll-proportion="0.0">
+        <state line="17" column="30" selection-start="240" selection-end="240" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/power.js">
+    <entry file="file://$PROJECT_DIR$/webpage/homepage.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="65" column="60" selection-start="2303" selection-end="2303" vertical-scroll-proportion="0.5093897">
+        <state line="17" column="63" selection-start="477" selection-end="477" vertical-scroll-proportion="0.45554203">
           <folding />
         </state>
       </provider>

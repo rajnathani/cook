@@ -1,0 +1,19 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+button, input[type=submit] {
+    background-color: transparent;
+}
+
+body, input, button, textarea {
+    font-size: 15px;
+    line-height: 110%;
+}
+
+
+body {
+    background-color: #ffdead;
+}
