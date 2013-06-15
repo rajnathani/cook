@@ -1,5 +1,6 @@
+/* Config */
 var default_text_not_html = true;
-
+/* End Config */
 
 var _cook_all_events = ("blur focus focusin focusout load resize scroll unload click dblclick " +
     "mousedown mouseup mousemove mouseover mouseout mouseenter mouseleave " +
@@ -48,12 +49,8 @@ function cook(tag, details) {
                     created_node.value = value;
                     break;
 
-
-
-
-
                 default :
-                    if (_cook_all_events.indexOf(key.toLowerCase()) !== -1){
+                    if (_cook_all_events.indexOf(key.toLowerCase()) !== -1) {
                         created_node['on' + key] = value;
                     }
                     (created_node).setAttribute(key, value);
@@ -71,45 +68,45 @@ function add_text(node, text) {
 
 
 var _cook_text_details_html_functions = [
-'span','div','p', 'article', 'section', 'aside', 'audio', 'video', 'figure', 'caption', 'form' , 'select', 'option', 'optgroup', 'button', 'textarea', 'ul', 'ol', 'li', 'abbr', 'table', 'tr', 'th', 'thead', 'tbody', 'tfoot', 'td', 'colgroup', 'blockquote', 'pre', 'b','u', 'strike','strong', 'sub', 'sup'];
+    'span', 'div', 'p', 'article', 'section', 'aside', 'audio', 'video', 'figure', 'caption', 'form' , 'select', 'option', 'optgroup', 'button', 'textarea', 'ul', 'ol', 'li', 'abbr', 'table', 'tr', 'th', 'thead', 'tbody', 'tfoot', 'td', 'colgroup', 'blockquote', 'pre', 'b', 'u', 'strike', 'strong', 'sub', 'sup'];
 
 
 var html_tag;
-for (var i=0;i < _cook_text_details_html_functions.length;i++){
+for (var i = 0; i < _cook_text_details_html_functions.length; i++) {
     html_tag = _cook_text_details_html_functions[i];
     console.log(i);
     console.log(html_tag);
-    eval("function " + html_tag +"(text, details) { " +
-        "if (details) {"+
-            "if (details.substring) {"+
-                "var middle = details;"+
-                "details = text;"+
-                "text = middle;"+
-            "}"+
-            "details.text = text;"+
-        "} else {"+
-            "details = text"+
-        "}"+
-        "return cook('" + html_tag + "', details);"+
-    "}"
+    eval("function " + html_tag + "(text, details) { " +
+        "if (details) {" +
+        "if (details.substring) {" +
+        "var middle = details;" +
+        "details = text;" +
+        "text = middle;" +
+        "}" +
+        "details.text = text;" +
+        "} else {" +
+        "details = text" +
+        "}" +
+        "return cook('" + html_tag + "', details);" +
+        "}"
 
     )
 }
 /*Sample of text-details html tag cook function below:
-function article(text, details) {
-    if (details) {
-        if (details.substring) {
-            var middle = details;
-            details = text;
-            text = middle;
-        }
-        details.text = text;
-    } else {
-        details = text
-    }
-    return cook('article', details);
-}
-*/
+ function article(text, details) {
+ if (details) {
+ if (details.substring) {
+ var middle = details;
+ details = text;
+ text = middle;
+ }
+ details.text = text;
+ } else {
+ details = text
+ }
+ return cook('article', details);
+ }
+ */
 
 function i(text, details) {
     if (details) {
@@ -142,24 +139,16 @@ function checkbox(details) {
 }
 
 
-
-
-
-
 function textinput(details) {
     details.type = "text";
     return cook('input', details)
 }
 
 
-
-
 function col(details) {
 
     return cook('col', details);
 }
-
-
 
 
 function a(text, href, details) {
@@ -175,6 +164,11 @@ function img(src, details) {
     if (details === undefined) {
         details = {}
     }
+    if (!src.substring) {
+        details = src;
+    } else {
+        details.src = src;
+    }
     details.src = src;
     return cook('img', details);
 }
@@ -184,7 +178,11 @@ function script(src, details) {
     if (details === undefined) {
         details = {}
     }
-    details.src = src;
+    if (!src.substring) {
+        details = src;
+    } else {
+        details.src = src;
+    }
     return cook('script', details);
 }
 
@@ -192,19 +190,31 @@ function link(href, details) {
     if (details === undefined) {
         details = {}
     }
+    if (!href.substring) {
+        details = href;
+    } else {
+        details.src = href;
+    }
     details.href = href;
     return cook('link', details);
+}
+
+function meta(details) {
+    return cook('meta', details);
 }
 
 function iframe(src, details) {
     if (details === undefined) {
         details = {}
     }
+    if (!src.substring) {
+        details = src;
+    } else {
+        details.src = src;
+    }
     details.src = src;
     return cook('iframe', details);
 }
-
-
 
 
 var paragraph = p;

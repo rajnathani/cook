@@ -24,25 +24,29 @@
       <file leaf-file-name="cook.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cook.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="103" column="19" selection-start="3402" selection-end="3402" vertical-scroll-proportion="0.0">
-              <folding />
+            <state line="0" column="0" selection-start="0" selection-end="63" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="homepage.html" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="homepage.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/webpage/homepage.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="63" selection-start="477" selection-end="477" vertical-scroll-proportion="0.45554203">
-              <folding />
+            <state line="431" column="55" selection-start="16382" selection-end="16382" vertical-scroll-proportion="-15.83871">
+              <folding>
+                <element signature="n#style#0;n#pre#0;n#li#0;n#ul#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="looks.css" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="looks.css" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/webpage/looks.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="30" selection-start="240" selection-end="240" vertical-scroll-proportion="0.0">
+            <state line="246" column="4" selection-start="3612" selection-end="3612" vertical-scroll-proportion="0.5472155">
               <folding />
             </state>
           </provider>
@@ -66,9 +70,12 @@
         <option value="$PROJECT_DIR$/example/pop_up_example.html" />
         <option value="$PROJECT_DIR$/powerhouse.js" />
         <option value="$PROJECT_DIR$/power.js" />
+        <option value="$PROJECT_DIR$/webpage/core.js" />
+        <option value="$PROJECT_DIR$/webpage/popscript.js" />
+        <option value="$PROJECT_DIR$/webpage/popscript.css" />
         <option value="$PROJECT_DIR$/cook.js" />
-        <option value="$PROJECT_DIR$/webpage/looks.css" />
         <option value="$PROJECT_DIR$/webpage/homepage.html" />
+        <option value="$PROJECT_DIR$/webpage/looks.css" />
       </list>
     </option>
   </component>
@@ -136,15 +143,29 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="Scope">
+        <subPane subId="Project Files">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="cook">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="options.lastSelected" value="project.propVCSSupport.Mappings" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../blog/skin" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../blog/skin/static/css/popscript.css" />
     <property name="FullScreen" value="false" />
+    <property name="GoToClass.includeJavaFiles" value="false" />
     <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
   </component>
@@ -266,21 +287,85 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/cook.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="103" column="19" selection-start="3402" selection-end="3402" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webpage/looks.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="30" selection-start="240" selection-end="240" vertical-scroll-proportion="0.0">
-          <folding />
+        <state line="210" column="12" selection-start="5303" selection-end="5303" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/webpage/homepage.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="63" selection-start="477" selection-end="477" vertical-scroll-proportion="0.45554203">
+        <state line="172" column="32" selection-start="7404" selection-end="7404" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="n#style#0;n#pre#0;n#li#0;n#ul#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webpage/looks.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="18" selection-start="143" selection-end="143" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../blog/skin/static/js/popscript.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="250" column="10" selection-start="0" selection-end="12100" vertical-scroll-proportion="0.025821596">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webpage/core.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="26" selection-start="159" selection-end="159" vertical-scroll-proportion="0.025821596">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webpage/popscript.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="436" column="0" selection-start="12100" selection-end="12100" vertical-scroll-proportion="10.257042">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../blog/skin/static/css/popscript.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="2843" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webpage/popscript.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="194" column="20" selection-start="2843" selection-end="2843" vertical-scroll-proportion="5.00939">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cook.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="63" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webpage/homepage.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="431" column="55" selection-start="16382" selection-end="16382" vertical-scroll-proportion="-15.83871">
+          <folding>
+            <element signature="n#style#0;n#pre#0;n#li#0;n#ul#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webpage/looks.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="246" column="4" selection-start="3612" selection-end="3612" vertical-scroll-proportion="0.5472155">
           <folding />
         </state>
       </provider>
