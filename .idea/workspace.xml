@@ -32,10 +32,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="homepage.html" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="homepage.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/webpage/homepage.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="431" column="55" selection-start="16382" selection-end="16382" vertical-scroll-proportion="-15.83871">
+            <state line="97" column="74" selection-start="2986" selection-end="2986" vertical-scroll-proportion="0.4823386">
               <folding>
                 <element signature="n#style#0;n#pre#0;n#li#0;n#ul#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
@@ -43,10 +43,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="looks.css" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="looks.css" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/webpage/looks.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="246" column="4" selection-start="3612" selection-end="3612" vertical-scroll-proportion="0.5472155">
+            <state line="246" column="4" selection-start="3612" selection-end="3612" vertical-scroll-proportion="-92.69231">
               <folding />
             </state>
           </provider>
@@ -74,8 +74,8 @@
         <option value="$PROJECT_DIR$/webpage/popscript.js" />
         <option value="$PROJECT_DIR$/webpage/popscript.css" />
         <option value="$PROJECT_DIR$/cook.js" />
-        <option value="$PROJECT_DIR$/webpage/homepage.html" />
         <option value="$PROJECT_DIR$/webpage/looks.css" />
+        <option value="$PROJECT_DIR$/webpage/homepage.html" />
       </list>
     </option>
   </component>
@@ -324,23 +324,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webpage/popscript.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="436" column="0" selection-start="12100" selection-end="12100" vertical-scroll-proportion="10.257042">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../blog/skin/static/css/popscript.css">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="2843" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webpage/popscript.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="194" column="20" selection-start="2843" selection-end="2843" vertical-scroll-proportion="5.00939">
           <folding />
         </state>
       </provider>
@@ -354,19 +340,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webpage/homepage.html">
+    <entry file="file://$PROJECT_DIR$/webpage/looks.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="431" column="55" selection-start="16382" selection-end="16382" vertical-scroll-proportion="-15.83871">
-          <folding>
-            <element signature="n#style#0;n#pre#0;n#li#0;n#ul#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
+        <state line="246" column="4" selection-start="3612" selection-end="3612" vertical-scroll-proportion="-92.69231">
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webpage/looks.css">
+    <entry file="file://$PROJECT_DIR$/webpage/homepage.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="246" column="4" selection-start="3612" selection-end="3612" vertical-scroll-proportion="0.5472155">
-          <folding />
+        <state line="97" column="74" selection-start="2986" selection-end="2986" vertical-scroll-proportion="0.4823386">
+          <folding>
+            <element signature="n#style#0;n#pre#0;n#li#0;n#ul#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
