@@ -9,7 +9,7 @@ The API and download links can be found on cook's webpage at [cook.relfor.co](ht
     cook(tag,details)
     
 tag represents the html tag, example "span", "div",etc. details is either string or an object (dictionary).
-- text: cook(tag, details) will create and return node of tag 'tag' with an internal text node of content 'text', customizing how 'text' is interpreted can be modified, more here  
+- text: cook(tag, details) will create and return node of tag 'tag' with an internal text node of content 'text', customizing how 'text' is interpreted can be modified, more [here](#text-html-config)  
 Example:
 
 
@@ -118,6 +118,7 @@ In this case the function can be called in either of these two ways
 text is a string, and details is a dictionary this will be equivalent to a key named text in the dictionary 'details' with the value mentioned by 'text', and then calling cook(tag,details)
 
 The html tags which can be represented in the above way are: 
+
     span, div, p, article, section,
     aside, audio, video, figure, caption,
     form , select, option, optgroup,
@@ -127,6 +128,7 @@ The html tags which can be represented in the above way are:
     pre, b, i, u, strike, strong, sub, sup
 
 The html tags which CANNOT be represented the above way are:
+
     a, input, col, link, script, meta, iframe
 
 Read the next section to check their APIs.
@@ -217,7 +219,7 @@ li() -> list_item()
 
 #Final notes
 
-##The text parameter
+##<a name="text-html-config"></a>The text parameter
 the 'text' parameter used in functions, eg:cook('span', text),div(text); will make the node have an internal text node of the the value mentioned by the text parameter
 Thus if 'text' is specified as 'this is \<b\>important\</b\>', the text will actually be 'this is \<b\>important\</b\>', without the word 'important' boldened. However since one can look at text as a mere subset of innerHTML, cook.js offers you an option to treat this 'text' parameter (not the 'text' key of the details dictionary, this will remain the same) as the node's inner html, which will result in the text looking like 'this is <b>important</b>'.
 The top of the cook.js file should have
@@ -235,7 +237,7 @@ Given that cook.js offers you a function for every html tag, you can start writi
 <table>
             
 <tr>
-th>HTML Code</th>
+<th>HTML Code</th>
 <th>cook.js</th>
 
 </tr>
@@ -256,8 +258,7 @@ th>HTML Code</th>
       &lt;a href=&quot;http://www.yahoo.com&quot;&gt;Yahoo&lt;/a&gt;
     &lt;/li&gt;
   &lt;/ul&gt;
-&lt;/div&gt;
-</pre>
+&lt;/div&gt;</pre>
 </td>
 <td>
 <pre>
@@ -274,8 +275,7 @@ div({'children':[
       a('Yahoo', 'http://www.yahoo.com')
     ])
   ]})
-]);
-                            </pre>
+]);</pre>
 
 </td>
 </tr>
