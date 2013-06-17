@@ -1,15 +1,15 @@
 cook
 ====
 
-A BSD licensed open source JavaScript library providing functions to facilitate easier creation of DOM elements, on the browser side.  
+A BSD licensed open source JavaScript library providing functions to facilitate easier creation of DOM elements, on the browser side.
 The API and download links can be found on cook's webpage at [cook.relfor.co](http://cook.relfor.co)
 
 #API
 
     cook(tag,details)
-    
+
 tag represents the html tag, example "span", "div",etc. details is either string or an object (dictionary).
-- text: cook(tag, details) will create and return node of tag 'tag' with an internal text node of content 'text', customizing how 'text' is interpreted can be modified, more [here](#text-html-config)  
+- text: cook(tag, details) will create and return node of tag 'tag' with an internal text node of content 'text', customizing how 'text' is interpreted can be modified, more [here](#text-html-config)
 Example:
 
 
@@ -36,16 +36,16 @@ Example:
           is
           equivalent to cook(tag,value)
       </td>
-  
+
   </tr>
   <tr>
-  
+
       <td>child</td>
       <td>node</td>
       <td>
           the value will be the node's child
       </td>
-  
+
   </tr>
   <tr>
       <td>children</td>
@@ -53,7 +53,7 @@ Example:
       <td>
           the nodes will be the created node's children in order as given in the array
       </td>
-  
+
   </tr>
   <tr>
       <td>html</td>
@@ -63,7 +63,7 @@ Example:
       <td>
           the value will be the inner html of the node.
       </td>
-  
+
   </tr>
   <tr>
       <td>event</td>
@@ -74,7 +74,7 @@ Example:
           the value which is a function is attached to the node with the event 'event'<br>
           examples of events: 'click', 'focus', 'keyup',etc.<br>
       </td>
-  
+
   </tr>
   <tr>
       <td>attribute</td>
@@ -86,9 +86,9 @@ Example:
           example: 'title', 'data-timestamp', 'value', 'href',etc.<br>
           any valid attribute for a node with tag 'tag' will work here.
       </td>
-  
+
   </tr>
-  
+
 </table>
 
 Example:
@@ -99,8 +99,8 @@ Example:
                 click:function(){lightbox(this.src)}}),
       cook('p', {class:'img-description',
                 text: 'The above image is our current logo.'})]);
-                
-                
+
+
 ##Write even lesser?
 
 Using calls like `cook('span', details)`, `cook('div', details)`, `cook('li', details)` to churn out those html nodes is possible, however would you want to further type lesser and improve readability of your code? Cook can help you here. An html tag represented by cook looks generically like:
@@ -114,10 +114,11 @@ In this case first_parameter can be
     - details: details is a dictionary, this will be equivalent to calling cook(tag, details)
 - Both the first\_parameter and second\_parameter are mentioned
 In this case the function can be called in either of these two ways
-`tag(text,details)` OR `tag(details,text)` 
-text is a string representing the internal text node, and details is a dictionary which follows the same rules (for a dictionary) of the details parameter in the function `cook(tag,details)` mentioned above.  
+`tag(text,details)` OR `tag(details,text)`
+text is a string representing the internal text node, and details is a dictionary which follows the same rules (for a dictionary) of the details parameter in the function `cook(tag,details)` mentioned above, this would therefore be equivalent to calling `cook(details + {'text':text}` where
+                                                                                                                                                                                                                                            <pre class="inline">details</pre> is a dictionary.
 
-The html tags which can be represented in the above way are: 
+The html tags which can be represented in the above way are:
 
     span, div, p, article, section,
     aside, audio, video, figure, caption,
@@ -196,7 +197,7 @@ equivalent to cook('img', details)
 
 ##Let's make life simpler: deeper than html tag functions
 
-So far we have functions as span(), div(), button(), etc. However there are some elements which we create which can be grouped distinctly. For example checkboxes?, wouldn't it be better if we could make a checkbox by having a checkbox() function rather than using input({'type':'checkbox'})? This section is about these types of functions.  
+So far we have functions as span(), div(), button(), etc. However there are some elements which we create which can be grouped distinctly. For example checkboxes?, wouldn't it be better if we could make a checkbox by having a checkbox() function rather than using input({'type':'checkbox'})? This section is about these types of functions.
 
     radio(details)
 
@@ -212,14 +213,14 @@ equivalent to cook('input', details + {'type':'text'}) OR input(details + {'type
 
 ##Some aliases? Better readability?
 
-To create a node with a 'u' tag the u() function can be used, li() function for 'li', p() for 'p'. Maybe you want to make your code more readable for yourself and/or for the others who work with it. For this cook.js has aliases to the lowly descriptive tag names like 'a', 'li', 'p', etc. Below is the complete list.  
+To create a node with a 'u' tag the u() function can be used, li() function for 'li', p() for 'p'. Maybe you want to make your code more readable for yourself and/or for the others who work with it. For this cook.js has aliases to the lowly descriptive tag names like 'a', 'li', 'p', etc. Below is the complete list.
 
-p() -> paragraph()  
-a() -> hyperlink()  
-b() -> bold()  
-i() -> underline()  
-u() -> italic()  
-li() -> list_item()  
+p() -> paragraph()
+a() -> hyperlink()
+b() -> bold()
+i() -> underline()
+u() -> italic()
+li() -> list_item()
 
 #Final notes
 
@@ -231,7 +232,7 @@ The top of the cook.js file should have
     /* Config */
         var default_text_not_html = true;
     /* End Config */
-    
+
 As you can see, the default is set to true , you can set this to be false if your preference is to pass in the inner html as the text parameter.
 
 ##Make snippets of your code look like html
@@ -239,7 +240,7 @@ As you can see, the default is set to true , you can set this to be false if you
 Given that cook.js offers you a function for every html tag, you can start writing code which looks very similar to html, here is an example:
 
 <table>
-            
+
 <tr>
 <th>HTML Code</th>
 <th>cook.js</th>
