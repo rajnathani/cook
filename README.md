@@ -146,6 +146,10 @@ The API of the functions of these html tags are as follows:
 
 in pseudo code this is equivalent to calling cook('a',details + {'text':text, 'href':href}). Obviously dictionary concatenation isn't permitted in javascript! The above translates to the details dictionary being filled in with key 'text' of value text, and key 'href' of value href.
 
+    a(details)
+
+equivalent to calling cook('a', details)
+
     input(details)
 
 equivalent to calling cook('input', details)
