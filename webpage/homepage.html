@@ -166,9 +166,9 @@ cook('div',{children:[
                             <b>OR</b>
                             <pre class="inline">tag(details,text)</pre>
                             <br>
-                            text is a string, and details is a dictionary
-                            this will be equivalent to a key named text in the dictionary 'details'
-                            with the value mentioned by 'text', and then calling <pre class="inline">cook(tag,details)</pre>
+                            text is a string representing the internal text node, and details is a dictionary which
+                            follows the same rules (for a dictionary) of the details parameter in the function `cook(tag,details)` mentioned above.
+
                         </li>
                     </ul>
                 </li>
