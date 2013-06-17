@@ -153,10 +153,16 @@ function col(details) {
 
 function a(text, href, details) {
     if (details === undefined) {
-        details = {}
+        details = {};
     }
-    details.text = text;
-    details.href = href;
+
+    if (href === undefined) {
+        details = text;
+    } else {
+        details.text = text;
+        details.href = href;
+    }
+
     return cook('a', details);
 }
 
@@ -229,7 +235,6 @@ var underline = u;
 
 
 var list_item = li;
-
 
 
 
