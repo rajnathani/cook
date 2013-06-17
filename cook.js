@@ -7,32 +7,61 @@ var _cook_all_events = ("blur focus focusin focusout load resize scroll unload c
     "change select submit keydown keypress keyup error contextmenu dragover dragleave " +
     "dragstart drag dragend animationstart animationend animationiteration").split(" ");
 
-function cook(tag, details) {
+
+
+
+function _distinguishThreeParameter(parameter_list) {
+    var dict = {};
+    var par;
+    for (var j = 0; j < parameter_list.length; j++) {
+        par = parameter_list[j];
+        if (_isString(par)) {
+            dict.text = par;
+        } else if (_isArray(par)) {
+            dict.children = par;
+        } else if (par !== undefined) {
+            dict.details = par;
+        }
+    }
+    return dict;
+}
+
+function _isArray(obj) {
+    return  Object.prototype.toString.call(obj) === '[object Array]';
+}
+
+function _isString(obj) {
+    return obj !== undefined && obj.substring;
+}
+
+function _isDictionary(obj) {
+    return obj !== undefined && !_isArray(obj) && !_isString();
+}
+
+function cook(tag, first_parameter, second_parameter, third_parameter) {
+
+    var par_dict = _distinguishThreeParameter([first_parameter, second_parameter, third_parameter]);
+    var text = par_dict.text;
+    var children = par_dict.children;
+    var details = par_dict.details;
+
     var created_node = document.createElement(tag);
 
-    if (details !== undefined) {
-        if (details.substring !== undefined) {
-            // element build dict is in this case simply text
-            if (default_text_not_html) {
-                return add_text(created_node, details);
-            } else {
-                created_node.innerHTML = details;
-                return created_node;
-            }
+    if (text !== undefined) {
+        if (default_text_not_html) {
+            add_text(created_node, text);
+        } else {
+            created_node.innerHTML = text;
         }
+    }
+
+    if (details !== undefined) {
         var key, value;
         for (key in details) {
             value = details[key];
 
             switch (key.toLowerCase()) {
-                case "child":
-                    created_node.appendChild(value);
-                    break;
-                case "children":
-                    for (var i = 0; i < value.length; i++) {
-                        created_node.appendChild(value[i]);
-                    }
-                    break;
+
                 case "classes":
                     for (var j = 0; j < value.length; j++) {
                         created_node.className += value[j] + ' ';
@@ -52,10 +81,16 @@ function cook(tag, details) {
                 default :
                     if (_cook_all_events.indexOf(key.toLowerCase()) !== -1) {
                         created_node['on' + key] = value;
+                    } else {
+                        (created_node).setAttribute(key, value);
                     }
-                    (created_node).setAttribute(key, value);
 
             }
+        }
+    }
+    if (children !== undefined) {
+        for (var c = 0; c < children.length; c++) {
+            created_node.appendChild(children[c]);
         }
     }
     return created_node;
@@ -68,158 +103,58 @@ function add_text(node, text) {
 
 
 var _cook_text_details_html_functions = [
-    'span', 'div', 'p', 'article', 'section', 'aside', 'audio', 'video', 'figure', 'caption', 'form' , 'select', 'option', 'optgroup', 'button', 'textarea', 'ul', 'ol', 'li', 'abbr', 'table', 'tr', 'th', 'thead', 'tbody', 'tfoot', 'td', 'colgroup', 'blockquote', 'pre', 'b', 'u', 'strike', 'strong', 'sub', 'sup'];
+    'span', 'div', 'p', 'article', 'section', 'aside', 'audio', 'video', 'figure', 'caption', 'form' , 'select', 'option', 'optgroup', 'button', 'textarea', 'ul', 'ol', 'li', 'abbr', 'table', 'tr', 'th', 'thead', 'tbody', 'tfoot', 'td', 'colgroup', 'blockquote', 'pre', 'b', 'u', 'strike', 'strong', 'sub', 'sup', 'a', 'col', 'img', 'script', 'link', 'meta', 'iframe', 'input'];
 
 
 var html_tag;
 for (var i = 0; i < _cook_text_details_html_functions.length; i++) {
     html_tag = _cook_text_details_html_functions[i];
-    console.log(i);
-    console.log(html_tag);
-    eval("function " + html_tag + "(text, details) { " +
-        "if (details) {" +
-        "if (details.substring) {" +
-        "var middle = details;" +
-        "details = text;" +
-        "text = middle;" +
-        "}" +
-        "details.text = text;" +
-        "} else {" +
-        "details = text" +
-        "}" +
-        "return cook('" + html_tag + "', details);" +
+
+    eval("function " + html_tag + "(first_parameter,second_parameter,third_parameter) { " +
+        "return cook('" + html_tag + "', first_parameter,second_parameter,third_parameter);" +
         "}"
 
     )
 }
 /*Sample of text-details html tag cook function below:
- function article(text, details) {
- if (details) {
- if (details.substring) {
- var middle = details;
- details = text;
- text = middle;
- }
- details.text = text;
- } else {
- details = text
- }
- return cook('article', details);
+ function article(first_parameter,second_parameter,third_parameter) {
+ return cook('article', first_parameter,second_parameter,third_parameter);
  }
  */
 
-function i(text, details) {
-    if (details) {
-        if (details.substring) {
-            var middle = details;
-            details = text;
-            text = middle;
-        }
-        details.text = text;
-    } else {
-        details = text
-    }
-    return cook('i', details);
+function i(first_parameter, second_parameter, third_parameter) {
+    return cook('i', first_parameter, second_parameter, third_parameter);
 }
 
 
 /*Custom html tag cook functions below:*/
 
-function input(details) {
-    return cook('input', details);
-}
+var _cook_form_func_name, _cook_form_type;
+var _cook_extra_form_functions = [
+    ['radio', 'radio'],
+    ['checkbox', 'checkbox'],
+    ['textinput', 'text']
+];
 
-function radio(details) {
-    details.type = 'radio';
-    return cook('input', details);
-}
-function checkbox(details) {
-    details.type = 'checkbox';
-    return cook('input', details);
-}
-
-
-function textinput(details) {
-    details.type = "text";
-    return cook('input', details)
-}
-
-
-function col(details) {
-
-    return cook('col', details);
-}
-
-
-function a(text, href, details) {
-    if (details === undefined) {
-        details = {};
-    }
-
-    if (href === undefined) {
-        details = text;
-    } else {
-        details.text = text;
-        details.href = href;
-    }
-
-    return cook('a', details);
-}
-
-function img(src, details) {
-    if (details === undefined) {
-        details = {}
-    }
-    if (!src.substring) {
-        details = src;
-    } else {
-        details.src = src;
-    }
-    details.src = src;
-    return cook('img', details);
-}
-
-
-function script(src, details) {
-    if (details === undefined) {
-        details = {}
-    }
-    if (!src.substring) {
-        details = src;
-    } else {
-        details.src = src;
-    }
-    return cook('script', details);
-}
-
-function link(href, details) {
-    if (details === undefined) {
-        details = {}
-    }
-    if (!href.substring) {
-        details = href;
-    } else {
-        details.src = href;
-    }
-    details.href = href;
-    return cook('link', details);
-}
-
-function meta(details) {
-    return cook('meta', details);
-}
-
-function iframe(src, details) {
-    if (details === undefined) {
-        details = {}
-    }
-    if (!src.substring) {
-        details = src;
-    } else {
-        details.src = src;
-    }
-    details.src = src;
-    return cook('iframe', details);
+for (var m = 0; m < _cook_extra_form_functions.length; m++) {
+    _cook_form_func_name = _cook_extra_form_functions[m][0];
+    _cook_form_type = _cook_extra_form_functions[m][1];
+    eval("function " + _cook_form_func_name + "(first_parameter,second_parameter,third_parameter) {" +
+        "if (_isDictionary(first_parameter)){" +
+        "    first_parameter.type = " + _cook_form_type + ";" +
+        "} else if(_isDictionary(second_parameter)) {" +
+        "    second_parameter.type = " + _cook_form_type + ";" +
+        "} else if (_isDictionary(third_parameter)) {" +
+        "    third_parameter.type = " + _cook_form_type + ";" +
+        "} else if (first_parameter === undefined) {" +
+        "    first_parameter = {type:'" + _cook_form_type + "'};" +
+        "} else if (second_parameter === undefined) {" +
+        "    second_parameter = {type:'" + _cook_form_type + "'}" +
+        "} else {" +
+        "    third_parameter = {type:'" + _cook_form_type + "'}" +
+        "}" +
+        "return cook('input', first_parameter,second_parameter,third_parameter);}"
+    );
 }
 
 

@@ -20,23 +20,38 @@
 <div id="api">
 <div id="top-api" class="align-middle">
 
-    <pre>cook(tag,details)</pre>
-    <p>tag represents the html tag, example "span", "div",etc.
-        details is either string or an object (dictionary).</p>
+    <pre>cook(tag [, first_parameter] [, second_parameter] [, third_parameter])</pre>
+    <div class="desc">
+        <pre class="inline">tag</pre>
+        represents the html tag, example "span", "div",etc.<br>
+        <pre class="inline">first_parameter</pre>
+        ,
+        <pre class="inline">second_parameter</pre>
+        , and
+        <pre class="inline">third_parameter</pre>
+        can either be any of the following.<br>
+        <b>The order of the parameters does NOT matter</b></div>
     <ul>
         <li>
-            text: cook(tag, details) will create and return node of tag 'tag' with an internal text node of content
-            'text',
+            string: this string will be the inner text of the created node,
             customizing how 'text' is interpreted can be modified, more <a class="normal-link" href="#text-html-config">here</a><br>
             <b>Example:</b>
             <pre>cook('span', 'hello world')</pre>
 
         </li>
         <li>
-            dictionary: cook(tag, details) will create and return a node of tag 'tag'.
-            The dictionary has keys with corresponding values:
-
-
+            array (of nodes): the nodes of the array in order as they are given will be the children
+            <b>Example:</b>
+            <pre>
+cook('span', [
+    cook('i', 'hello'),
+    cook('b', 'world')
+   ])</pre>
+        </li>
+        <li>
+            dictionary: this dictionary contains details of the created node, which include attributes, properties,
+            events, and more.
+            The keys have the corresponding values, note that the keys are case insensitive:
         </li>
     </ul>
     <div class="align-middle orange">
@@ -62,29 +77,22 @@
 
             </tr>
             <tr>
-
-                <td>child</td>
-                <td>node</td>
-                <td>
-                    the value will be the node's child
-                </td>
-
-            </tr>
-            <tr>
-                <td>children</td>
-                <td>array of nodes</td>
-                <td>
-                    the nodes will be the created node's children in order as given in the array
-                </td>
-
-            </tr>
-            <tr>
                 <td>html</td>
                 <td>
                     string
                 </td>
                 <td>
                     the value will be the inner html of the node.
+                </td>
+
+            </tr>
+            <tr>
+                <td>classes</td>
+                <td>
+                    array of strings
+                </td>
+                <td>
+                    the created node will have css classes mentioned by the array in the order as given.
                 </td>
 
             </tr>
@@ -118,7 +126,7 @@
     <div>
         <b>Example:</b>
             <pre>
-cook('div',{children:[
+cook('div',[
     cook('img', {src:'http://cdn.example.com/logo.png',
                 title: 'Our Logo', alt: 'Image of our Logo',
                 click:function(){lightbox(this.src)}}),
@@ -137,47 +145,16 @@ cook('div',{children:[
         <td>
             <h2>Write even lesser?</h2>
             Using calls like
-            <pre class="inline">cook('span', details), cook('div', details), cook('li', details)</pre>
+            <pre class="inline">cook('span', ...), cook('div', ...), cook('li', ...)</pre>
             to churn
-            out those html nodes is possible, however would you want to further type lesser and improve readability of your code? Cook can help you here.
+            out those html nodes is possible, however would you want to further type lesser and improve readability of
+            your code? Cook can help you here.
             An html tag represented by cook looks generically like:
-            <pre>tag(first_parameter, seconds_parameter)</pre>
-            where the following is possible
-            <ul>
-                <li>
-                    Only first_parameter is mentioned<br>
-                    In this case first_parameter can be
-                    <ul>
-                        <li>
-                            text: text is a string, this will be equivalent to calling <pre class="inline">cook(tag, {text:text})</pre> OR
-                            simply <pre class="inline">cook(tag,text)</pre>
-                        </li>
-                        <li>
-                            details: details is a dictionary, this will be equivalent to calling <pre class="inline">cook(tag, details)</pre>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    Both the first_parameter and second_parameter are mentioned<br>
-                    In this case the function can be called in either of these two ways
-                    <ul>
-                        <li>
-                            <pre class="inline">tag(text,details)</pre>
-                            <b>OR</b>
-                            <pre class="inline">tag(details,text)</pre>
-                            <br>
-                            text is a string representing the internal text node, and details is a dictionary which
-                            follows the same rules (for a dictionary) of the details parameter in the function <pre class="inline">cook(tag,details)</pre> mentioned above, this would therefore be equivalent to calling <pre class="inline">cook(details + {'text':text})</pre> where
-                            <pre class="inline">details</pre> is a dictionary.
-
-                        </li>
-                    </ul>
-                </li>
-            </ul>
-            <br>
+            <br><br><pre>tag(first_parameter, seconds_parameter, third_parameter)</pre>
+            this is equivalent to <pre class="inline">cook(tag, first_parameter, second_parameter, third_parameter)</pre>
 
             <p>The html tags which can be represented in the above way are:
-                <br>
+                <br><br>
             <pre>
 span, div, p, article, section,
 aside, audio, video, figure, caption,
@@ -185,18 +162,12 @@ form , select, option, optgroup,
 button, textarea, ul, ol, li, abbr,
 table, tr, th, thead, tbody, tfoot,
 td, colgroup, blockquote,
-pre, b, i, u, strike, strong, sub, sup</pre>
-            <br>
-            The html tags which CANNOT be represented the above way are:
-            <pre>
+pre, b, i, u, strike, strong, sub, sup,
 a, input, col, link, script, meta, iframe</pre>
-            <br>
-            Read the next section to check their APIs.
-            <p>
 
 
         </td>
-        <td>
+        <!--td>
             <h2>Remaining tags?</h2>
             In the previous section almost every html tag was represented by its own named function, barring the
             ones below:
@@ -207,80 +178,77 @@ a, input, col, link, script, meta, iframe</pre>
             <ul class="html-tags-api">
                 <li>
                     <pre>a(text,href,details)</pre>
-                    in pseudo code this is equivalent to calling <pre class="inline">cook('a',details + {'text':text, 'href':href})</pre>.
+                    in pseudo code this is equivalent to calling
+                    <pre class="inline">cook('a',details + {'text':text, 'href':href})</pre>
+                    .
                     Obviously dictionary concatenation isn't permitted in javascript! The above translates to
                     the details dictionary being filled in with key 'text' of value text, and key 'href' of value href.
                 </li>
                 <li>
                     <pre>a(details)</pre>
-                    equivalent to calling <pre class="inline">cook('a', details)</pre>
+                    equivalent to calling
+                    <pre class="inline">cook('a', details)</pre>
                 </li>
                 <li>
                     <pre>input(details)</pre>
-                    equivalent to calling <pre class="inline">cook('input', details)</pre>
+                    equivalent to calling
+                    <pre class="inline">cook('input', details)</pre>
                 </li>
                 <li>
                     <pre>meta(details)</pre>
-                    equivalent to calling <pre class="inline">cook('meta', details)</pre>
+                    equivalent to calling
+                    <pre class="inline">cook('meta', details)</pre>
                 </li>
                 <li>
                     <pre>col(details)</pre>
-                    equivalent to calling <pre class="inline">cook('col', details)</pre>
+                    equivalent to calling
+                    <pre class="inline">cook('col', details)</pre>
                 </li>
                 <li>
                     <pre>link(href, details)</pre>
-                    equivalent to <pre class="inline">cook('link', details + {'href':href})</pre>
+                    equivalent to
+                    <pre class="inline">cook('link', details + {'href':href})</pre>
                 <li>
                 <li>
                     <pre>link(details)</pre>
-                    equivalent to <pre class="inline">cook('link', details)</pre>
+                    equivalent to
+                    <pre class="inline">cook('link', details)</pre>
                 </li>
                 <li>
                     <pre>script(src, details)</pre>
-                    equivalent to <pre class="inline">cook('script', details + {'src':src})</pre>
+                    equivalent to
+                    <pre class="inline">cook('script', details + {'src':src})</pre>
                 </li>
                 <li>
                     <pre>script(details)</pre>
-                    equivalent to <pre class="inline">cook('script', details)</pre>
+                    equivalent to
+                    <pre class="inline">cook('script', details)</pre>
                 </li>
                 <li>
                     <pre>iframe(src, details)</pre>
-                    equivalent to <pre class="inline">cook('iframe', details + {'src':src})</pre>
+                    equivalent to
+                    <pre class="inline">cook('iframe', details + {'src':src})</pre>
                 </li>
                 <li>
                     <pre>iframe(details)</pre>
-                    equivalent to <pre class="inline">cook('iframe', details)</pre>
+                    equivalent to
+                    <pre class="inline">cook('iframe', details)</pre>
                 </li>
                 <li>
                     <pre>img(src, details)</pre>
-                    equivalent to <pre class="inline">cook('img', details + {'src':src})</pre>
+                    equivalent to
+                    <pre class="inline">cook('img', details + {'src':src})</pre>
                 </li>
                 <li>
                     <pre>img(details)</pre>
-                    equivalent to <pre class="inline">cook('img', details)</pre>
+                    equivalent to
+                    <pre class="inline">cook('img', details)</pre>
                 </li>
             </ul>
-        </td>
-    </tr>
-    <tr>
+        </td-->
+
         <td>
-            <h2>Let's make life simpler: deeper than html tag functions</h2>
-            So far we have functions as span(), div(), button(), etc. However there
-            are some elements which we create which can be grouped distinctly. For
-            example checkboxes?, wouldn't it be better if we could make a checkbox
-            by having a checkbox() function rather than using input({'type':'checkbox'})?
-            This section is about these types of functions.
-            <ul class="html-tags-api">
-                <li><pre>radio(details)</pre>
-                equivalent to <pre class="inline">cook('input', details + {'type':'radio'})</pre> OR <pre class="inline">input(details + {'type':'radio'})</pre></li>
-                <li><pre>checkbox(details)</pre>
-                equivalent to <pre class="inline">cook('input', details + {'type':'checkbox'})</pre> OR <pre class="inline">input(details + {'type':'checkbox'})</pre></li>
-                <li><pre>textinput(details)</pre>
-                equivalent to <pre class="inline">cook('input', details + {'type':'text'})</pre> OR <pre class="inline">input(details + {'type':'text'})</pre></li>
-            </ul>
-        </td>
-        <td>
-            <h2>Some aliases? Better readability?</h2>
+            <h2>Better readability? Aliases</h2>
             To create a node with a 'u' tag the u() function can be used, li() function for 'li', p() for 'p'. Maybe
             you want to make your code more readable for yourself and/or for the others who work with it. For this
             cook.js has aliases to the lowly descriptive tag names like 'a', 'li', 'p', etc. Below is the complete
@@ -312,12 +280,42 @@ a, input, col, link, script, meta, iframe</pre>
                     <td>list_item()</td>
                 </tr>
             </table-->
-            <div>p() -> paragraph()</div>
-            <div>a() -> hyperlink()</div>
-            <div>b() -> bold()</div>
-            <div>i() -> underline()</div>
-            <div>u() -> italic()</div>
-            <div>li() -> list_item()</div>
+            <div><pre class="inline">p(...)</pre> -> <pre class="inline">paragraph(...)</pre></div>
+            <div><pre class="inline">a(...)</pre> -> <pre class="inline">hyperlink(...)</pre></div>
+            <div><pre class="inline">b(...)</pre> -> <pre class="inline">bold(...)</pre></div>
+            <div><pre class="inline">i(...)</pre> -> <pre class="inline">underline(...)</pre></div>
+            <div><pre class="inline">u(...)</pre> -> <pre class="inline">italic(...)</pre></div>
+            <div><pre class="inline">li(...)</pre> -> <pre class="inline">list_item(...)</pre></div>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <h2>Let's make life simpler: deeper than html tag functions</h2>
+            So far we have functions as span(), div(), button(), etc. However there
+            are some elements which we create which can be grouped distinctly. For
+            example checkboxes?, wouldn't it be better if we could make a checkbox
+            by having a checkbox() function rather than using input({'type':'checkbox'})?
+            This section is about these types of functions.
+            <ul class="html-tags-api">
+                <li>
+                    <pre>radio(first_parameter, second_parameter, third_parameter)</pre>
+                    equivalent to
+                    <pre class="inline">input(first_parameter, second_parameter, third_parameter)</pre>
+                    where the input is of type 'radio'.
+                </li>
+                <li>
+                    <pre>checkbox(first_parameter, second_parameter, third_parameter)</pre>
+                    equivalent to
+                    <pre class="inline">input(first_parameter, second_parameter, third_parameter)</pre>
+                    where the input is of type 'checkbox'.
+                </li>
+                <li>
+                    <pre>textinput(first_parameter, second_parameter, third_parameter)</pre>
+                    equivalent to
+                    <pre class="inline">input(first_parameter, second_parameter, third_parameter)</pre>
+                    where the input is of type 'text'.
+                </li>
+            </ul>
         </td>
     </tr>
     </tbody>
@@ -399,19 +397,19 @@ a, input, col, link, script, meta, iframe</pre>
                 </td>
                 <td>
                         <pre>
-div({'children':[
+div([
   p('Here are some popular search engines'),
-  ul({'children':[
-    li({'child':
-      a('Google', 'http://www.google.com')
-    }),
-    li({'child':
-      a('Bing', 'http://www.bing.com')
-    }),
-    li({'child':
-      a('Yahoo', 'http://www.yahoo.com')
-    })
-  ]})
+  ul([
+    li([
+      a('Google', {href:'http://www.google.com'})
+    ]),
+    li([
+      a('Bing', {href:'http://www.bing.com'})
+    ]),
+    li([
+      a('Yahoo', {href:'http://www.yahoo.com'})
+    ])
+  ])
 ]);
                             </pre>
 
@@ -431,8 +429,8 @@ div({'children':[
 
         <div id="download">
             <h2>Download Links</h2>
-            <a href="http://cook.relfor.co/cook.js">Development Version (Unminified) (5.4 kb)</a>
-            <a href="http://cook.relfor.co/cook.min.js">Production Version (Minified) (2.53 kb)</a>
+            <a href="http://cook.relfor.co/cook.js">Development Version (Unminified) (~ 5.3 kb)</a>
+            <a href="http://cook.relfor.co/cook.min.js">Production Version (Minified) (~ 3.05 kb)</a>
         </div>
 
     </div>
@@ -441,7 +439,9 @@ div({'children':[
 </div>
 </div>
 <div id="footer">Enjoy cooking DOM!<br>-<a href="http://relfor.co" class="no-color">Relfor</a></div>
-<a href="https://github.com/relfor/cook"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_white_ffffff.png" alt="Fork me on GitHub"></a>
+<a href="https://github.com/relfor/cook"><img style="position: absolute; top: 0; right: 0; border: 0;"
+                                              src="https://s3.amazonaws.com/github/ribbons/forkme_right_white_ffffff.png"
+                                              alt="Fork me on GitHub"></a>
 </body>
 
 </html>
