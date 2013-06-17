@@ -115,7 +115,7 @@ In this case first_parameter can be
 - Both the first\_parameter and second\_parameter are mentioned
 In this case the function can be called in either of these two ways
 `tag(text,details)` OR `tag(details,text)` 
-text is a string, and details is a dictionary this will be equivalent to a key named text in the dictionary 'details' with the value mentioned by 'text', and then calling cook(tag,details)
+text is a string representing the internal text node, and details is a dictionary which follows the same rules (for a dictionary) of the details parameter in the function `cook(tag,details)` mentioned above.  
 
 The html tags which can be represented in the above way are: 
 
