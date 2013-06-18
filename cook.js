@@ -8,6 +8,8 @@ var _cook_all_events = ("blur focus focusin focusout load resize scroll unload c
     "dragstart drag dragend animationstart animationend animationiteration").split(" ");
 
 
+
+
 function _distinguishThreeParameter(parameter_list) {
     var dict = {};
     var par;
@@ -139,11 +141,11 @@ for (var m = 0; m < _cook_extra_form_functions.length; m++) {
     _cook_form_type = _cook_extra_form_functions[m][1];
     eval("function " + _cook_form_func_name + "(first_parameter,second_parameter,third_parameter) {" +
         "if (_isDictionary(first_parameter)){" +
-        "    first_parameter.type = " + _cook_form_type + ";" +
+        "    first_parameter.type = '" + _cook_form_type + "';" +
         "} else if(_isDictionary(second_parameter)) {" +
-        "    second_parameter.type = " + _cook_form_type + ";" +
+        "    second_parameter.type = '" + _cook_form_type + "';" +
         "} else if (_isDictionary(third_parameter)) {" +
-        "    third_parameter.type = " + _cook_form_type + ";" +
+        "    third_parameter.type = '" + _cook_form_type + "';" +
         "} else if (first_parameter === undefined) {" +
         "    first_parameter = {type:'" + _cook_form_type + "'};" +
         "} else if (second_parameter === undefined) {" +
