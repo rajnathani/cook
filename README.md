@@ -127,31 +127,27 @@ The html tags which can be represented in the above way are:
 
 ##Better readability? Aliases
 
-To create a node with a 'u' tag the u() function can be used, li() function for 'li', p() for 'p'. Maybe you want to make your code more readable for yourself and/or for the others who work with it. For this cook.js has aliases to the lowly descriptive tag names like 'a', 'li', 'p', etc. Below is the complete list.
+To create a node with a 'u' tag the u() function can be used, li() function for 'li', p() for 'p'. Maybe you want to make your code more readable for yourself and/or for the others who work with it. For this cook.js has aliases to the lowly descriptive tag names like 'a', 'li', 'p', etc. Below is the complete list.  
 
-`p(...)` -> `paragraph(...)`
-`a(...)` -> `hyperlink(...)`
-`b(...)` -> `bold(...)`
-`i(...)` -> `underline(...)`
-`u(...)` -> `italic(...)`
-`li(...)` -> `list_item(...)`
+`p(...)` -> `paragraph(...)`  
+`a(...)` -> `hyperlink(...)`  
+`b(...)` -> `bold(...)`  
+`i(...)` -> `underline(...)`  
+`u(...)` -> `italic(...)`  
+`li(...)` -> `list_item(...)`  
 
 
 ##Let's make life simpler: deeper than html tag functions
 So far we have functions as span(), div(), button(), etc. However there are some elements which we create which can be grouped distinctly. For example checkboxes?, wouldn't it be better if we could make a checkbox by having a checkbox() function rather than using input({'type':'checkbox'})? This section is about these types of functions.
 
     radio(first_parameter, second_parameter, third_parameter)
-
 equivalent to `input(first_parameter, second_parameter, third_parameter)` where the input is of type 'radio'.
 
     checkbox(first_parameter, second_parameter, third_parameter)
-
 equivalent to `input(first_parameter, second_parameter, third_parameter)` where the input is of type 'checkbox'.
 
     textinput(first_parameter, second_parameter, third_parameter)
-
 equivalent to `input(first_parameter, second_parameter, third_parameter)` where the input is of type 'textinput'.
-
 
 
 
