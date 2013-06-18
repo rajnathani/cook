@@ -9,8 +9,8 @@ The API and download links can be found on cook's webpage at [cook.relfor.co](ht
     cook(tag [, first_parameter] [, second_parameter] [, third_parameter])
 
 `tag` represents the html tag, example "span", "div",etc.
-`first_parameter` , `second_parameter` , and `third_parameter` can either be any of the following.  
-**The order of the parameters does NOT matter**
+`first_parameter` , `second_parameter` , and `third_parameter` can either be any of the following.
+**The order of the parameters do NOT matter**
 
 - string: this string will be the inner text of the created node,, customizing how 'text' is interpreted can be modified, more [here](#text-html-config)
 Example:
@@ -18,7 +18,7 @@ Example:
 
     cook('span', 'hello world')
 
-- array (of nodes): the nodes of the array in order as they are given will be the children, example:  
+- array (of nodes): the nodes of the array in order as they are given will be the children, example:
 
 
     cook('span', [
@@ -95,7 +95,7 @@ Example:
 
 
 </table>
-        
+
 Example:
 
     cook('div',[
@@ -127,14 +127,14 @@ The html tags which can be represented in the above way are:
 
 ##Better readability? Aliases
 
-To create a node with a 'u' tag the u() function can be used, li() function for 'li', p() for 'p'. Maybe you want to make your code more readable for yourself and/or for the others who work with it. For this cook.js has aliases to the lowly descriptive tag names like 'a', 'li', 'p', etc. Below is the complete list.  
+To create a node with a 'u' tag the u() function can be used, li() function for 'li', p() for 'p'. Maybe you want to make your code more readable for yourself and/or for the others who work with it. For this cook.js has aliases to the lowly descriptive tag names like 'a', 'li', 'p', etc. Below is the complete list.
 
-`p(...)` -> `paragraph(...)`  
-`a(...)` -> `hyperlink(...)`  
-`b(...)` -> `bold(...)`  
-`i(...)` -> `underline(...)`  
-`u(...)` -> `italic(...)`  
-`li(...)` -> `list_item(...)`  
+`p(...)` -> `paragraph(...)`
+`a(...)` -> `hyperlink(...)`
+`b(...)` -> `bold(...)`
+`i(...)` -> `underline(...)`
+`u(...)` -> `italic(...)`
+`li(...)` -> `list_item(...)`
 
 
 ##Let's make life simpler: deeper than html tag functions
