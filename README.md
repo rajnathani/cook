@@ -120,7 +120,7 @@ The html tags which can be represented in the above way are:
     form , select, option, optgroup,
     button, textarea, ul, ol, li, abbr,
     table, tr, th, thead, tbody, tfoot,
-    td, colgroup, blockquote,
+    td, colgroup, blockquote, br, hr,
     pre, b, i, u, strike, strong, sub, sup,
     a, input, col, link, script, meta, iframe
 

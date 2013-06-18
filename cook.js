@@ -8,8 +8,6 @@ var _cook_all_events = ("blur focus focusin focusout load resize scroll unload c
     "dragstart drag dragend animationstart animationend animationiteration").split(" ");
 
 
-
-
 function _distinguishThreeParameter(parameter_list) {
     var dict = {};
     var par;
@@ -103,7 +101,7 @@ function add_text(node, text) {
 
 
 var _cook_text_details_html_functions = [
-    'span', 'div', 'p', 'article', 'section', 'aside', 'audio', 'video', 'figure', 'caption', 'form' , 'select', 'option', 'optgroup', 'button', 'textarea', 'ul', 'ol', 'li', 'abbr', 'table', 'tr', 'th', 'thead', 'tbody', 'tfoot', 'td', 'colgroup', 'blockquote', 'pre', 'b', 'u', 'strike', 'strong', 'sub', 'sup', 'a', 'col', 'img', 'script', 'link', 'meta', 'iframe', 'input'];
+    'span', 'div', 'p', 'article', 'section', 'aside', 'audio', 'video', 'figure', 'caption', 'form' , 'select', 'option', 'optgroup', 'button', 'textarea', 'ul', 'ol', 'li', 'abbr', 'br', 'hr', 'table', 'tr', 'th', 'thead', 'tbody', 'tfoot', 'td', 'colgroup', 'blockquote', 'pre', 'b', 'u', 'strike', 'strong', 'sub', 'sup', 'a', 'col', 'img', 'script', 'link', 'meta', 'iframe', 'input'];
 
 
 var html_tag;
