@@ -121,6 +121,7 @@ The html tags which can be represented in the above way are:
     button, textarea, ul, ol, li, abbr,
     table, tr, th, thead, tbody, tfoot,
     td, colgroup, blockquote, br, hr,
+    h1, h2, h3, h4, h5, h6,
     pre, b, i, u, strike, strong, sub, sup,
     a, input, col, link, script, meta, iframe
 
