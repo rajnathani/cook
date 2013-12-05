@@ -90,7 +90,7 @@ function cook(tag, first_parameter, second_parameter, third_parameter) {
     }
     if (children !== undefined) {
         for (var c = 0; c < children.length; c++) {
-            created_node.appendChild(children[c]);
+            children[c] && created_node.appendChild(children[c]);
         }
     }
     return created_node;
