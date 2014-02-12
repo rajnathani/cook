@@ -1,0 +1,21 @@
+
+
+<html>
+
+<head>
+<script type="text/javascript" src="cook.js"></script>
+
+</head>
+<body>
+</body>
+<script type="text/javascript">
+	document.body.appendChild(cook('h1', 'tests'));
+	document.body.appendChild(div('hello world'));
+	document.body.appendChild(checkbox({name:'lol'}));
+	document.body.appendChild(span({style:'color:red'}, 'red'));
+	document.body.appendChild(button('Click invokes 2 events', {'click':
+		[function(){alert('first')},function(){alert('second')}]
+	}));
+
+</script>
+</html>
