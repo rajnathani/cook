@@ -5,12 +5,12 @@ var _cook_all_events = ("blur focus focusin focusout load resize scroll unload c
     "dragstart drag dragend animationstart animationend animationiteration").split(" ");
 
 
-function _distinguishThreeParameter(parameter_list) {
+function _distin3Ps(parameter_list) {
     var dict = {};
     var par;
     for (var j = 0; j < parameter_list.length; j++) {
         par = parameter_list[j];
-        if (_isString(par)) {
+        if (_isString(par) || typeof par === 'number') {
             dict.text = par;
         } else if (_isArray(par)) {
             dict.children = par;
@@ -88,7 +88,7 @@ function _isObj(obj) {
 
 function cook(tag, first_parameter, second_parameter, third_parameter) {
 
-    var par_dict = _distinguishThreeParameter([first_parameter, second_parameter, third_parameter]);
+    var par_dict = _distin3Ps([first_parameter, second_parameter, third_parameter]);
     var text = par_dict.text;
     var children = par_dict.children;
     var details = par_dict.details;
@@ -97,7 +97,7 @@ function cook(tag, first_parameter, second_parameter, third_parameter) {
 
     if (text !== undefined) {
         if (default_text_not_html) {
-            add_text(created_node, text);
+            _add_text(created_node, text);
         } else {
             created_node.innerHTML = text;
         }
@@ -119,7 +119,7 @@ function cook(tag, first_parameter, second_parameter, third_parameter) {
                     }
                     break;
                 case "text":
-                    add_text(created_node, v);
+                    _add_text(created_node, v);
                     break;
                 case 'html':
                     created_node.innerHTML = v;
@@ -143,14 +143,16 @@ function cook(tag, first_parameter, second_parameter, third_parameter) {
         }
     }
     if (children !== undefined) {
+        var frag = document.createDocumentFragment();
         for (var c = 0; c < children.length; c++) {
-            children[c] && created_node.appendChild(children[c]);
+            children[c] && frag.appendChild(children[c]);
         }
+        created_node.appendChild(frag);
     }
     return created_node;
 }
 
-function add_text(node, text) {
+function _add_text(node, text) {
     node.appendChild(document.createTextNode(text));
     return node;
 }

@@ -16,6 +16,13 @@
 	document.body.appendChild(button('Click invokes 2 events', {'click':
 		[function(){alert('first')},function(){alert('second')}]
 	}));
+	var spans = [];
+	for(var i=0; i < 200; i++) {
+		spans.push(span(i));
+	}
+	document.body.appendChild(div('Multiple elements', spans))
+
+
 
 </script>
 </html>
