@@ -7,6 +7,7 @@ var _cook_all_events = ("blur focus focusin focusout load resize scroll unload c
     "change select submit keydown keypress keyup error contextmenu dragover dragleave " +
     "dragstart drag dragend animationstart animationend animationiteration").split(" ");
 
+var _cook_$ = window.$ && (($ === window.jQuery) || ($ === window.Zepto));
 
 function _distin3Ps(parameter_list) {
     var dict = {};
@@ -27,7 +28,10 @@ function _distin3Ps(parameter_list) {
 var cook_event = {
         GUID: 1,
         add: function (element, type, handler) {
-            if (element.addEventListener) {
+            if (_cook_$) {
+                $(element).on(type, handler);
+            }
+            else if (element.addEventListener) {
                 element.addEventListener(type, handler, false);
             } else {
                 if (!handler.$$guid) handler.$$guid = cook_event.event.GUID++;
@@ -44,7 +48,10 @@ var cook_event = {
             }
         },
         remove: function (element, type, handler) {
-            if (element.removeEventListener) {
+            if (_cook_$) {
+                $(element).off(type, handler);
+            }
+            else if (element.removeEventListener) {
                 element.removeEventListener(type, handler, false);
             } else {
                 if (element.events && element.events[type]) {
