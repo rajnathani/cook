@@ -170,7 +170,7 @@ function _add_text(node, text) {
 
 if __name__ == '__main__':
     cook_text_details_html_functions = [
-        'span', 'div', 'p', 'article', 'section', 'aside', 'audio', 'video', 'figure', 'caption', 'form' , 'select', 'option', 'optgroup', 'button', 'textarea', 'ul', 'ol', 'li', 'abbr', 'br', 'hr', 'table', 'tr', 'th', 'thead', 'tbody', 'tfoot', 'td', 'colgroup', 'blockquote', 'pre', 'b', 'u', 'strike', 'strong', 'sub', 'sup', 'a', 'col', 'img', 'script', 'link', 'meta', 'iframe', 'input', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6']
+        'span', 'div', 'p', 'article', 'section', 'aside', 'audio', 'video', 'figure', 'caption', 'form' , 'select', 'option', 'optgroup', 'button', 'textarea', 'ul', 'ol', 'li', 'abbr', 'br', 'hr', 'table', 'tr', 'th', 'thead', 'tbody', 'tfoot', 'td', 'colgroup', 'blockquote', 'pre', 'b', 'u', 'strike', 'strong', 'sub', 'sup', 'a', 'col', 'img', 'script', 'link', 'meta', 'iframe', 'input','label', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6']
 
 
     for cur in cook_text_details_html_functions:
