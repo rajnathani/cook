@@ -143,7 +143,7 @@ function cook(tag, first_parameter, second_parameter, third_parameter) {
                             cook_event.add(created_node, k, v[j])
                         }
                     } else {
-                        (created_node).setAttribute(k, v);
+                        (v !== null) && (created_node).setAttribute(k, v);
                     }
 
             }
