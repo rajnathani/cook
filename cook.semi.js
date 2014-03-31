@@ -131,11 +131,7 @@ function cook(tag, first_parameter, second_parameter, third_parameter) {
                 case 'html':
                     created_node.innerHTML = v;
                     break;
-
-                case 'value':
-                    created_node.value = v;
-                    break;
-
+              
                 default :
                     if (_cook_all_events.indexOf(k.toLowerCase()) !== -1) {
                         v = v instanceof Array ? v : [v]; 
