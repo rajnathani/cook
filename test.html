@@ -12,17 +12,30 @@
 	document.body.appendChild(cook('h1', 'tests'));
 	document.body.appendChild(div('hello world'));
 	document.body.appendChild(checkbox({name:'lol'}));
-	document.body.appendChild(span({style:'color:red'}, 'red'));
+	document.body.appendChild(span({style:'color:red'}, 'red'));	
 	document.body.appendChild(button('Click invokes 2 events', {'click':
 		[function(){alert('first')},function(){alert('second')}]
 	}));
 	var spans = [];
-	for(var i=0; i < 200; i++) {
+	for(var i=0; i < 50; i++) {
 		spans.push(span(i));
 	}
-	document.body.appendChild(div('Multiple elements', spans))
-
-
+	document.body.appendChild(div('Multiple elements', spans));
+	document.body.appendChild(div({'id':'att', role:undefined, 'class':false, 'data-null':null}));
+	var att_el = document.getElementById('att');
+	if (!att_el) {
+		alert('Fail: Setting of an attribute failed');
+	} else {
+		if (att_el.getAttribute('role') !== null) {
+			alert('Fail: Setting of an undefined attribute');
+		} else if (att_el.getAttribute('class') !== 'false') {
+			alert('Fail: Setting of a boolean attribute');	
+		} else if (att_el.getAttribute('data-null') !== null) {
+			alert('Fail: Setting of a null attribute');			
+		} else {
+			alert('Tests passed');
+		}
+	}
 
 </script>
 </html>

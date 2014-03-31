@@ -146,7 +146,8 @@ function cook(tag, first_parameter, second_parameter, third_parameter) {
                             cook_event.add(created_node, k, v[j])
                         }
                     } else {
-                        (v !== null) && (created_node).setAttribute(k, v);
+                    console.log(v,!(!v && v !== false && v !== '' ));
+                        !(!v && v !== false && v !== '' ) && (created_node).setAttribute(k, v);
                     }
 
             }
