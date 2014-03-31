@@ -21,6 +21,7 @@
 		spans.push(span(i));
 	}
 	document.body.appendChild(div('Multiple elements', spans));
+	
 	document.body.appendChild(div({'id':'att', role:undefined, 'class':false, 'data-null':null}));
 	var att_el = document.getElementById('att');
 	if (!att_el) {
