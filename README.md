@@ -2,7 +2,7 @@ cook
 ====
 
 A BSD licensed open source JavaScript library providing functions to facilitate easier creation of DOM elements, on the browser side.
-The API and download links can be found on cook's webpage at [cook.relfor.co](http://cook.relfor.co)
+The API and download links can be found on cook's webpage at [cook.rajnathani.com](http://cook.rajnathani.com)
 
 #API
 
